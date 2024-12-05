@@ -1,0 +1,112 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #000;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #2C3E50, #34495E, #95A5A6);
+  z-index: 1;
+  animation: gradient-shift 10s infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Symbol Container */
+.symbol-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Floating Symbols */
+.symbol {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: absolute;
+  animation: float 8s infinite;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.symbol:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Randomly Position Symbols */
+.symbol:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.symbol:nth-child(2) { top: 50%; left: 30%; animation-delay: 1s; }
+.symbol:nth-child(3) { top: 70%; left: 70%; animation-delay: 2s; }
+.symbol:nth-child(4) { top: 30%; left: 60%; animation-delay: 3s; }
+.symbol:nth-child(5) { top: 80%; left: 20%; animation-delay: 4s; }
+.symbol:nth-child(6) { top: 40%; left: 80%; animation-delay: 5s; }
+
+/* Stanza Display */
+.stanza-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 3;
+  display: none;
+  animation: fade-in 0.5s ease-out;
+}
+
+.stanza-display p {
+  font-size: 1.5rem;
+  white-space: pre-line;
+}
+
+.stanza-display .close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.stanza-display .close-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

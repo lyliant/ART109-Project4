@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorrows Void</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Symbols -->
+  <div class="symbol-container">
+    <div class="symbol" data-stanza="0"></div>
+    <div class="symbol" data-stanza="1"></div>
+    <div class="symbol" data-stanza="2"></div>
+    <div class="symbol" data-stanza="3"></div>
+    <div class="symbol" data-stanza="4"></div>
+    <div class="symbol" data-stanza="5"></div>
+  </div>
+
+  <!-- Stanza Display -->
+  <div class="stanza-display hidden">
+    <p class="stanza-text"></p>
+    <button class="close-button">Close</button>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="media/song.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
